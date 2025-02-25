@@ -1,0 +1,72 @@
+body {
+    background-color: grey;
+}
+
+header {
+    width: 75%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+header h1 {
+    position: absolute; 
+    bottom: 0px;
+    left: 16px;
+    margin: 0px;
+    color: white;
+    font-size: 150px;
+    font-family: "Jolly Lodger", serif;
+}
+
+nav ul {
+    width: 75%;
+    height: 100px;
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 0;
+    background-color: purple;
+    outline: 2px solid black;
+    outline-offset: -2px;
+}
+
+nav ul li {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-color: purple;
+    outline: 2px solid black;
+}
+
+nav ul li:hover {
+    background-color: #96709F;
+}
+
+nav ul li a {
+    display: block;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-family: "Jolly Lodger", serif;
+    font-size: 70px;
+}
+
+main {
+    width: 75%;
+    height: 500px;
+    background-color: rgba(165, 17, 165, 0.753);
+    margin-left: auto;
+    margin-right: auto;
+}
