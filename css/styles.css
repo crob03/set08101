@@ -82,3 +82,23 @@ main {
 }
 
 /* GEOGRAPHY QUIZ */
+
+.geo-quiz-button {
+    width: 100px;
+    height: 50px;
+    background-color: purple;
+    outline: 2px solid black; 
+}
+
+.geo-header {
+    text-align: center;
+    font-family: "Jolly Lodger", serif;
+    font-size: 100px;
+    margin: 0px;
+    padding-top: 20px;
+}
+
+.geo-start-text {
+    text-align: center;
+    font-size: 30px;
+}
