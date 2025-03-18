@@ -8,7 +8,7 @@ body {
     height: 200px;
     position: relative;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -79,15 +79,31 @@ main {
     background-color: rgba(165, 17, 165, 0.753);
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 40px;
 }
 
 /* GEOGRAPHY QUIZ */
 
-.geo-quiz-button {
-    width: 100px;
-    height: 50px;
+.geo-start-button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 110px;
+    height: 60px;
     background-color: purple;
     outline: 2px solid black; 
+}
+
+.geo-start-button:hover {
+    background-color: #96709f;
+}
+
+.geo-start-button a {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    font-family: "Jolly Lodger", serif;
+    color: white;
+    text-decoration: none;
 }
 
 .geo-header {
