@@ -8,11 +8,12 @@ body {
     height: 200px;
     position: relative;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
 }
 
+#site-header img {
 #site-header img {
     width: 100%;
     height: 100%;
@@ -20,6 +21,7 @@ body {
     opacity: 0.9;
 }
 
+#site-header h1 {
 #site-header h1 {
     position: absolute; 
     bottom: 0px;
@@ -30,6 +32,9 @@ body {
     font-family: "Jolly Lodger", serif;
 }
 
+
+/* WEBSITE MAIN NAVIGATION */
+#site-navigation ul {
 
 /* WEBSITE MAIN NAVIGATION */
 #site-navigation ul {
@@ -45,6 +50,7 @@ body {
 }
 
 #site-navigation ul li {
+#site-navigation ul li {
     width: 20%;
     height: 100%;
     float: left;
@@ -54,8 +60,11 @@ body {
 
 #site-navigation ul li:hover {
     background-color: #96709f;
+#site-navigation ul li:hover {
+    background-color: #96709f;
 }
 
+#site-navigation ul li a {
 #site-navigation ul li a {
     display: block;
     text-align: center;
@@ -71,8 +80,18 @@ body {
 
 #site-navigation #active-page:hover {
     background-color: #96709f;
+    text-decoration: none;
 }
 
+#site-navigation #active-page {
+    background-color: #a23ab9;
+}
+
+#site-navigation #active-page:hover {
+    background-color: #96709f;
+}
+
+/* PAGE MAIN CONTENT */
 /* PAGE MAIN CONTENT */
 main {
     width: 75%;
@@ -80,5 +99,3 @@ main {
     margin-left: auto;
     margin-right: auto;
 }
-
-/* GEOGRAPHY QUIZ */
