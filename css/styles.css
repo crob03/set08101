@@ -85,25 +85,38 @@ main {
 /* GEOGRAPHY QUIZ */
 
 .geo-start-button {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 110px;
-    height: 60px;
+    width: 300px;
+    height: 90px;
+    font-size: 70px;
+    font-family: "Jolly Lodger", serif;
     background-color: purple;
-    outline: 2px solid black; 
+    border: 2px solid black; 
+    text-align: center;
+}
+
+.geo-start-button a {
+    text-decoration: none;
+    color: white;
 }
 
 .geo-start-button:hover {
     background-color: #96709f;
 }
 
-.geo-start-button a {
+.geo-replay-button {
     display: block;
-    text-align: center;
-    font-size: 50px;
-    font-family: "Jolly Lodger", serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 90px;
+    font-size: 70px;
     color: white;
-    text-decoration: none;
+    font-family: "Jolly Lodger", serif;
+    background-color: purple;
+    border: 2px solid black; 
 }
 
 .geo-header {
@@ -114,7 +127,120 @@ main {
     padding-top: 20px;
 }
 
-.geo-start-text {
+.geo-text {
     text-align: center;
     font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.geo-quiz-nav {
+    margin-top: 2%;
+    display: inline-block;
+    width: 100%;
+}
+
+.geo-replay-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 90px;
+    font-size: 70px;
+    color: white;
+    font-family: "Jolly Lodger", serif;
+    background-color: purple;
+    border: 2px solid black; 
+}
+
+.geo-replay-button:hover {
+    background-color: #96709f;
+}
+
+.geo-prev-button {
+    float: left;
+    margin-left: 30%;
+    width: 200px;
+    height: 90px;
+    font-size: 70px;
+    color: white;
+    font-family: "Jolly Lodger", serif;
+    background-color: purple;
+    border: 2px solid black; 
+}
+
+.geo-prev-button:hover {
+    background-color: #96709f;
+}
+
+.geo-next-button {
+    float: right;
+    margin-right: 30%;
+    width: 200px;
+    height: 90px;
+    font-size: 70px;
+    color: white;
+    font-family: "Jolly Lodger", serif;
+    background-color: purple;
+    border: 2px solid black; 
+}
+
+.geo-next-button:hover {
+    background-color: #96709f;
+}
+
+.geo-question-header {
+    font-size: 70px;
+    font-family: "Jolly Lodger", serif;
+    line-height: 120px;
+    text-decoration: underline;
+    margin-top: 0px;
+    display: block;
+    margin-left: 3%;
+    margin-bottom: 0px;
+}
+
+.geo-question-text {
+    margin-top: 0px;
+    padding-top: 0px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.geo-answer {
+    width: 40%;
+    display: block;
+    margin: 20px auto 20px auto;
+    height: 90px;
+    font-size: 50px;
+    color: white;
+    background-color: purple;
+    border: 2px solid black; 
+}
+
+.geo-answer:hover {
+    background-color: #96709f; 
+}
+
+.geo-answer-checked {
+    background-color: #96709f; 
+}
+
+#score-header {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 100px;
+    font-family: "Jolly Lodger", serif;
+}
+
+#final-score {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    text-align: center;
+    font-size: 200px;
+    font-family: "Jolly Lodger", serif;
 }
