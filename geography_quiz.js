@@ -1,12 +1,13 @@
-import { allQuestions } from "./data/geo_questions.js";
+import { allQuestions } from "./data/geography_questions.js";
 
 
-var questions = selectRandomQuestions(4);
-var index = 0;
+var questions;
+var index;
+
 
 function selectRandomQuestions(numQuestions) {
-    // declare array to store selected questions
-    var selectedQuestions = new Array(numQuestions);
+    // declare array to store the questions
+    questions = new Array(numQuestions);
 
     // repeat for each question to be included in quiz
     for (let i = 0; i < numQuestions; i++) {
@@ -15,81 +16,82 @@ function selectRandomQuestions(numQuestions) {
             let randomIndex = Math.floor(Math.random() * allQuestions.length);
 
             // check if question has already been selected
-            if (selectedQuestions.includes(allQuestions[randomIndex])) {
+            if (questions.includes(allQuestions[randomIndex])) {
                 continue;
             } else {
-                selectedQuestions[i] = allQuestions[randomIndex];
+                questions[i] = allQuestions[randomIndex];
                 break;
             }
         }
-    }
 
-    // return the selected questions
-    return selectedQuestions;
+        // set the chose answer to 0 (ensures answers are not carried over when replaying)
+        questions[i].chosenAnswer = 0;
+    }
 }
+
 
 // updates the users chosen answer
-function updateAnswer(answer) {
-    questions[index].chosenAnswer = answer;
+function updateAnswer(answerNum) {
+    // update answer
+    questions[index].chosenAnswer = answerNum;
+
+    // add css for chosen answer
+    const chosenAnswer = document.getElementById(`answer${answerNum}`);
+    chosenAnswer.setAttribute("class", "geo-answer  geo-answer-checked");
+
+    // display the question again
+    displayQuestion();
 }
 
+
+// add a header to the page displaying the question number
 function addQuestionHeader(node) {
-    // create question header
     const questionLabel = document.createElement("h2");
+    questionLabel.setAttribute("class", "geo-question-header");
     questionLabel.textContent = `Question ${index + 1}`;
 
     node.appendChild(questionLabel);
 }
 
+
+// add question text to the page
 function addQuestionText(node) {
-    // create question text
     const questionText = document.createElement("p");
+    questionText.setAttribute("class", "geo-question-text");
     questionText.textContent = `${questions[index].question}`;
 
     node.appendChild(questionText);
 }
 
-function createAnswerLabel(answerNum, answerText) {
-    // add label for answer button
-    const answerLabel = document.createElement("label");
-    answerLabel.setAttribute("for", `answer${answerNum}`);
-    answerLabel.textContent = answerText;
 
-    return answerLabel;
-}
-
-function createAnswerButton(answerNum) {
-    // create answer button
-    const answerButton = document.createElement("input");
-
-    // set attributes
-    answerButton.setAttribute("type", "radio");
-    answerButton.setAttribute("name", "answers");
+// create an answer button
+function createAnswerButton(answerNum, answerText) {
+    const answerButton = document.createElement("button");
     answerButton.setAttribute("id", `answer${answerNum}`);
+    answerButton.setAttribute("class", "geo-answer");
+    answerButton.textContent = `${answerText}`
 
-    // set to checked if it is the users previously chosen answer
-    if (questions[index].chosenAnswer == answerNum) {
-        answerButton.setAttribute("checked", "checked");
-    }
-
-    // add onclick function to update users answer
+    // add event listener to update the question with the chosen answer when clicked
     answerButton.addEventListener("click", () => updateAnswer(answerNum));
+
+    // update the classes of the button if it is the users previously chosen answer
+    if (questions[index].chosenAnswer == answerNum) {
+        answerButton.setAttribute("class", "geo-answer geo-answer-checked");
+    }
 
     return answerButton;
 }
 
-function addQuestionAnswers(node) {
-    // add all question answers
-    for (const [answerNum, answerText] of Object.entries(questions[index].answers)) {
-        // add answer radio button
-        const answerButton = createAnswerButton(answerNum);
-        node.appendChild(answerButton);
 
-        // add label for answer button
-        const anserLabel = createAnswerLabel(answerNum, answerText);
-        node.appendChild(anserLabel);
+// add the the answer buttons for the current question
+function addAnswerButtons(node) {
+    for (const [answerNum, answerText] of Object.entries(questions[index].answers)) {
+        const answerButton = createAnswerButton(answerNum, answerText);
+
+        node.appendChild(answerButton);
     }
 }
+
 
 // remove all children from a node
 function removeChildren(node) {
@@ -98,11 +100,13 @@ function removeChildren(node) {
     }
 }
 
+
 // display the previous question
 function displayPreviousQuestion() {
     index--;
     displayQuestion();
 }
+
 
 // display the next question
 function displayNextQuestion() {
@@ -110,28 +114,37 @@ function displayNextQuestion() {
     displayQuestion();
 }
 
+
 // add a button to return to previous question
 function addPrevButton(node) {
     const prevButton = document.createElement("button");
+    prevButton.setAttribute("class", "geo-prev-button");
     prevButton.textContent = "PREV";
+
     prevButton.addEventListener("click", displayPreviousQuestion);
 
     node.appendChild(prevButton);
 }
 
+
 // add a button to continue to the next question
 function addNextButton(node) {
     const nextButton = document.createElement("button");
+    nextButton.setAttribute("class", "geo-next-button");
     nextButton.textContent = "NEXT";
+
     nextButton.addEventListener("click", displayNextQuestion);
 
     node.appendChild(nextButton);
 }
 
+
 // add a button to submit answers
 function addSubmitButton(node) {
     const submitButton = document.createElement("button");
+    submitButton.setAttribute("class", "geo-next-button");
     submitButton.textContent = "SUBMIT";
+
     submitButton.addEventListener("click", displayScore);
 
     node.appendChild(submitButton);
@@ -151,6 +164,7 @@ function calculateScore() {
     return score;
 }
 
+
 // display the players score
 function displayScore() {
     // get main
@@ -161,30 +175,35 @@ function displayScore() {
 
     // display score header
     const scoreHeader = document.createElement("h2");
+    scoreHeader.setAttribute("id", "score-header");
     scoreHeader.textContent = "You scored:";
     main.appendChild(scoreHeader);
 
 
     // display score
     const score = document.createElement("p");
+    score.setAttribute("id", "final-score");
     score.textContent = `${calculateScore()}/${questions.length}`;
+
     main.appendChild(score);
 
     // display message thanking user for playing
     const message = document.createElement("p");
+    message.setAttribute("class", "geo-text");
     message.textContent = "Thank you for playing!";
+
     main.appendChild(message);
 
-    // display nav link to play again
-    const nav = document.createElement("nav");
+    // display replay button
+    const replayButton = document.createElement("button");
+    replayButton.setAttribute("class", "geo-replay-button");
+    replayButton.textContent = "PLAY AGAIN?";
 
-    const link = document.createElement("a");
-    link.textContent = "PLAY AGAIN?";
-    link.setAttribute("href", "geography_quiz.html");
-    nav.appendChild(link);
+    replayButton.addEventListener("click", startNewGame);
 
-    main.appendChild(nav);
+    main.appendChild(replayButton);
 }
+
 
 // display the current question
 function displayQuestion() {
@@ -201,20 +220,35 @@ function displayQuestion() {
     addQuestionText(main);
 
     // add the question answers
-    addQuestionAnswers(main);
+    addAnswerButtons(main);
+
+    // create div for quiz navigation buttons
+    const div = document.createElement("div");
+    div.setAttribute("class", "geo-quiz-nav");
 
     // if not the first question add a previous button
     if (index != 0) {
-        addPrevButton(main);
+        addPrevButton(div);
     }
 
     // add submit or next button based on question number
     if (index == questions.length - 1) {
-        addSubmitButton(main);
+        addSubmitButton(div);
     } else {
-        addNextButton(main);
+        addNextButton(div);
     }
+
+    main.appendChild(div);
 }
 
-// display first question after loading page
-window.onload = displayQuestion(0);
+
+function startNewGame() {
+    // select 5 random questions from the question banks
+    selectRandomQuestions(5);
+    index = 0;
+
+    // display the first question
+    displayQuestion(index);
+}
+
+window.onload = startNewGame();
