@@ -335,3 +335,73 @@ main {
     font-size: 200px;
     font-family: "Jolly Lodger", serif;
 }
+
+/* SPORTS QUIZ */
+
+.quiz-container {
+    margin-left: 20px;
+    text-align: center;
+}
+
+#quiz-form p, #quiz-form label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.question {
+    margin-top: 40px;
+}
+
+.quiz-container h1 {
+    font-family: "Jolly Lodger", serif;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    font-size: 90px;
+    text-decoration: underline;
+}
+
+#sports-submit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 300px;
+    height: 90px;
+    font-size: 70px;
+    color: white;
+    font-family: "Jolly Lodger", serif;
+    background-color: purple;
+    border: 2px solid black; 
+}
+
+#sports-submit:hover {
+    background-color: #96709f;
+}
+
+#result p {
+    font-family: "Jolly Lodger", serif;
+    font-size: 60px;
+}
+
+#restart-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 60px;
+    font-size: 50px;
+    font-family: "Jolly Lodger", serif;
+    background-color: purple;
+    border: 2px solid black; 
+    text-align: center;
+}
+
+#restart-button:hover {
+    background-color: #96709f;
+}
+
+#restart-button a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}

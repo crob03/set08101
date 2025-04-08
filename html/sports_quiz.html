@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QuizStorm - Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="../js/sports_quiz.js"></script>
+    </head>
+    <body>
+        <header id="site-header">
+            <img src="../images/lightning.jpeg">
+            <h1>QuizStorm</h1>
+        </header>
+
+        <nav id="site-navigation">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a>General</a></li>
+                <li><a href="geography_start.html">Geography</a></li>
+                <li id="active-page"><a href="sports_quiz.html">Sports</a></li>
+                <li><a>History</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="quiz-container">
+                <h1>Sports Quiz</h1>
+                <form id="quiz-form">
+                    <div class="question">
+                        <p>1. The Mens Scotland international Team have won the World Cup. (True/False)</p>
+                        <label>
+                            <input type="radio" name="q1" value="true"> True
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="false"> False
+                        </label>
+                    </div>
+        
+                    <div class="question">
+                        <p>2. Tennis Player Andy Murray has NEVER won Wimbledon. (True/False)</p>
+                        <label>
+                            <input type="radio" name="q2" value="true"> True
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="false"> False
+                        </label>
+                    </div>
+        
+                    <div class="question">
+                        <p>3. The Mens Scottish Rugby have won the Rugby World Cup. (True/False)</p>
+                        <label>
+                            <input type="radio" name="q3" value="true"> True
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="false"> False
+                        </label>
+                    </div>
+        
+                    <div class="question">
+                        <p>4. Double Boogey is a term in Golf. (True/False)</p>
+                        <label>
+                            <input type="radio" name="q4" value="true"> True
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="false"> False
+                        </label>
+                    </div>
+        
+                    <div class="question">
+                        <p>5. Ronnie Coleman lifted 800 pounds. (True/False)</p>
+                        <label>
+                            <input type="radio" name="q5" value="true"> True
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="false"> False
+                        </label>
+                    </div>
+        
+                    <button id="sports-submit" type="button" onclick="checkAnswers()">SUBMIT</button>
+                </form>
+        
+                <div id="result"></div>
+            </div>
+        </main>
+    </body>
+</html>

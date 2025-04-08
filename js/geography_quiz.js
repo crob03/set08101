@@ -1,4 +1,4 @@
-import { allQuestions } from "./data/geography_questions.js";
+import { allQuestions } from "../data/geography_questions.js";
 
 
 var questions;
