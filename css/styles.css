@@ -89,6 +89,7 @@ main {
     margin-left: auto;
     margin-right: auto;
 }
+
 body {
     background-color: grey;
 }
@@ -171,6 +172,46 @@ main {
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 40px;
+}
+
+/* HOME PAGE */
+#home-title {
+    font-family: "Jolly Lodger", serif;
+    text-align: center;
+    font-size: 70px;
+    margin-top: 0px;
+}
+
+#home-content p {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#home-content ul {
+    text-align: center;
+    list-style: none;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#home-content a {
+    text-decoration: none;
+    color: black;
+}
+
+#volcano-img {
+    display: inline-block;
+    width: 30%;
+    margin-left: 15%;
+    height: 250px;
+}
+
+#pier-img {
+    width: 30%;
+    height: 250px;
+    margin-left: 10%;
+    display: inline-block;
 }
 
 /* GEOGRAPHY QUIZ */
@@ -404,4 +445,13 @@ main {
     display: block;
     text-decoration: none;
     color: white;
+}
+
+/* GENERAL AND HISTORY QUIZ */
+
+.construction {
+    text-align: center;
+    margin-top: 0px;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
